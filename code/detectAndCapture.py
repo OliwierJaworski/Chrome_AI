@@ -1,5 +1,6 @@
 # pip install serenium
 from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -17,6 +18,7 @@ options = webdriver.ChromeOptions()
 #options.add_argument("--disable-software-rasterizer")
 options.add_argument("--mute-audio")
 options.add_argument("--window-size=800,600")
+options.add_argument("--disable-popup-blocking")
 #options.add_argument("--disable-extensions")
 
 # Open Chrome browser and access Dino game
@@ -29,6 +31,19 @@ try:
 
     print("debug: Navigated to the Dino game.")
     time.sleep(2)
+
+    
+    a = ActionChains(service)
+
+    m = service.find_element_by_link_text("Consent")
+    print("debug: Label found")
+
+    #hover over element
+    a.move_to_element(m).click().perform()
+
+    print("debug: Label clicked")
+
+
 
     print("Debug: Attempting to find canvas...")
     # Find the game canvas element
