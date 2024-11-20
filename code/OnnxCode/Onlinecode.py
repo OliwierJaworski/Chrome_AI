@@ -7,3 +7,5 @@ outputs = ort_sess.run(None, {'input': x.numpy()})
 # Print Result
 predicted, actual = classes[outputs[0][0].argmax(0)], classes[y]
 print(f'Predicted: "{predicted}", Actual: "{actual}"')
+
+# https://onnxruntime.ai/docs/get-started/with-python.html
