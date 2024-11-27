@@ -1,4 +1,4 @@
-# pip install serenium
+# pip install selenium
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.service import Service
@@ -27,23 +27,9 @@ browser = webdriver.Chrome(options=options)
 try:
     print("Debug: Opening Browser...")
     browser.get('https://chromedino.com')
-    # browser.get('chrome://dino/') --> Does not work
 
     print("debug: Navigated to the Dino game.")
     time.sleep(2)
-
-    
-    a = ActionChains(service)
-
-    m = service.find_element_by_link_text("Consent")
-    print("debug: Label found")
-
-    #hover over element
-    a.move_to_element(m).click().perform()
-
-    print("debug: Label clicked")
-
-
 
     print("Debug: Attempting to find canvas...")
     # Find the game canvas element
