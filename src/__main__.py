@@ -2,15 +2,15 @@ import os
 from ultralytics import YOLO
 import torch
 
-test_image_dir = "results/before"
-test_image_name = "sprite_multiple.jpg"
-result_image_dir = "results/after"
+test_image_dir = "C:/Git/Chrome_AI/src/results/before" # Replace with your location
+test_image_name = "Afbeelding2.png"
+result_image_dir = "C:/Git/Chrome_AI/src/results/after" # Replace with your location
 
 pretrained = True 
 save_export_file = False #inverted logic for some reason
 epochs = 20
 
-pretrained_path = "yolo11n.pt" #which model will be used if pretrained is True
+pretrained_path = "C:/Git/Chrome_AI/src/results/model/default_model/custom_model.pt" #which model will be used if pretrained is True
 mode_save_name = "trained.pt" #where the model will be saved 
 
 def main():
