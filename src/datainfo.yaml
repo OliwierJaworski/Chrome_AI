@@ -1,5 +1,0 @@
-train: Soda_Dataset/images/train  # Path to the training images
-val: Soda_Dataset/images/val      # Path to the validation images
-
-nc: 4  # Number of classes (adjust based on your dataset)
-names: ['cola-bottle', 'fanta-bottle', 'lipton-peach-bottle', 'sprite-bottle']  # Class names (adjust as needed)
