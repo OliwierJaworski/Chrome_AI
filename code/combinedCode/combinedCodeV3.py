@@ -43,8 +43,8 @@ pretrained = True
 save_export_file = False #inverted logic for some reason
 epochs = 20
 
-pretrained_path = "C:/Git/Chrome_AI/src/results/model/default_model/custom_model.pt" #which model will be used if pretrained is True
-mode_save_name = "trained.pt" #where the model will be saved 
+pretrained_path = "C:/Git/Chrome_AI/src/results/model/default_model/custom_model_acht.pt" #which model will be used if pretrained is True
+mode_save_name = "custom_model_acht.pt" #where the model will be saved 
 
 def calculate_distance(box1, box2):
     """
@@ -122,6 +122,7 @@ try:
         while True:
             img = sct.grab(monitor)
             img = np.array(img)
+            img = cv.cvtColor(img, cv.COLOR_RGB2BGR)  # Convert RGB to BGR color
 
             results = model_test_frame(model, img)
 
